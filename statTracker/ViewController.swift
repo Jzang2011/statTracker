@@ -53,7 +53,9 @@ class ViewController: UIViewController {
         print(location)
         
         let circle = UIView(frame: CGRect(x: location.x , y: location.y , width: 10.0, height: 10.0))
-        //        circle.layer.cornerRadius = 50
+        circle.layer.cornerRadius = 5
+        circle.layer.borderColor = UIColor.purple.cgColor
+        circle.layer.borderWidth = 2
         circle.backgroundColor = UIColor.yellow
         circle.clipsToBounds = true
         self.view.addSubview(circle)
@@ -65,6 +67,7 @@ class ViewController: UIViewController {
         //Fired when tap has been initiated on halfFieldImage
         let location = sender.location(in: view)
         //User commited a tap on the screen. Respond accordingly
+        //Used for debugging and learning purposes. 
         if sender.state == .began {
             print("Tap Gesture began")
         } else if sender.state == .changed {
@@ -77,23 +80,28 @@ class ViewController: UIViewController {
         let popUpVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ShotPopUpID") as! PopUpViewController
         self.addChildViewController(popUpVC)
         
+        //Set reference of viewController in popUpVC
         popUpVC.viewController = self
+        //Set Initialshot (initialDot) data point to either be accepted or rejected in popup window
+        popUpVC.inititalShot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
+        
+        //Used for later as of (3/30/17) Will create a tuple to add to an array for efficient saving of locations of shots to present on other various screens. 
+        //Screens: Per Quarter, Per Half, Per Team, Per Player
         popUpVC.currentShotLocationX = location.x
         popUpVC.currentSHotLocationY = location.y
-        popUpVC.inititalShot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
 
+        //sets the frame of the popup to be the same as the main view.
         popUpVC.view.frame = self.view.frame
         self.view.addSubview(popUpVC.view)
         popUpVC.didMove(toParentViewController: self)
         
-//        let initialDot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
-////        circle.layer.cornerRadius = 50
-//        initialDot.backgroundColor = UIColor.red
-//        initialDot.clipsToBounds = true
-//        self.view.addSubview(initialDot)
-        
+        //initialDot represents a shot that happend on the field.
+        //initialDot is defined bellow
         let initialDot = popUpVC.inititalShot
         initialDot.backgroundColor = UIColor.red
+        initialDot.layer.cornerRadius = 2.5
+        initialDot.layer.borderColor = UIColor.white.cgColor
+        initialDot.layer.borderWidth = 0.25
         initialDot.clipsToBounds = true
         self.view.addSubview(initialDot)
     }
