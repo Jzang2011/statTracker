@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B44E78051E8DEA24003FF105 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B44E78041E8DEA24003FF105 /* PopUpViewController.swift */; };
 		B4CA8C091E63D36F0040A4CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CA8C081E63D36F0040A4CC /* AppDelegate.swift */; };
 		B4CA8C0B1E63D36F0040A4CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CA8C0A1E63D36F0040A4CC /* ViewController.swift */; };
 		B4CA8C0E1E63D36F0040A4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4CA8C0C1E63D36F0040A4CC /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B44E78041E8DEA24003FF105 /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
 		B4CA8C051E63D36F0040A4CC /* statTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = statTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CA8C081E63D36F0040A4CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4CA8C0A1E63D36F0040A4CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,15 +58,40 @@
 		B4CA8C071E63D36F0040A4CC /* statTracker */ = {
 			isa = PBXGroup;
 			children = (
+				B4CA8C1F1E63D3840040A4CC /* model */,
+				B4CA8C1E1E63D3800040A4CC /* controller */,
+				B4CA8C1D1E63D37B0040A4CC /* view */,
 				B4CA8C081E63D36F0040A4CC /* AppDelegate.swift */,
-				B4CA8C0A1E63D36F0040A4CC /* ViewController.swift */,
-				B4CA8C0C1E63D36F0040A4CC /* Main.storyboard */,
 				B4CA8C121E63D36F0040A4CC /* Assets.xcassets */,
 				B4CA8C141E63D36F0040A4CC /* LaunchScreen.storyboard */,
 				B4CA8C171E63D36F0040A4CC /* Info.plist */,
 				B4CA8C0F1E63D36F0040A4CC /* statTracker.xcdatamodeld */,
 			);
 			path = statTracker;
+			sourceTree = "<group>";
+		};
+		B4CA8C1D1E63D37B0040A4CC /* view */ = {
+			isa = PBXGroup;
+			children = (
+				B4CA8C0C1E63D36F0040A4CC /* Main.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		B4CA8C1E1E63D3800040A4CC /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				B4CA8C0A1E63D36F0040A4CC /* ViewController.swift */,
+				B44E78041E8DEA24003FF105 /* PopUpViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		B4CA8C1F1E63D3840040A4CC /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +170,7 @@
 				B4CA8C0B1E63D36F0040A4CC /* ViewController.swift in Sources */,
 				B4CA8C111E63D36F0040A4CC /* statTracker.xcdatamodeld in Sources */,
 				B4CA8C091E63D36F0040A4CC /* AppDelegate.swift in Sources */,
+				B44E78051E8DEA24003FF105 /* PopUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +334,7 @@
 				B4CA8C1C1E63D36F0040A4CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
