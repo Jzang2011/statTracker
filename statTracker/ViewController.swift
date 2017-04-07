@@ -14,6 +14,18 @@ class ViewController: UIViewController {
     
     private var _shotList = [UIView]()
     
+    private var _shotListWPlayer = [(shotView: UIView, shotByNumber: String, scored: Bool, onGoal: Bool)]()
+
+    var shotListWPlayer: Array<(shotView: UIView, shotByNumber: String, scored: Bool, onGoal: Bool)>{
+        get{
+            return _shotListWPlayer
+        }
+        set{
+            _shotListWPlayer = newValue
+        }
+    }
+    
+    
     var shotList: Array<UIView>{
         get{
             return _shotList
@@ -37,6 +49,11 @@ class ViewController: UIViewController {
         for shot in shotList {
             shot.removeFromSuperview()
         }
+        
+        //prints shotList with location of shot, number of player, and if it was a goal.
+        for shot in shotListWPlayer {
+            print(shot.shotView, shot.shotByNumber, shot.scored, shot.onGoal)
+        }
     }
     
     @IBAction func didLongPress(_ sender: UILongPressGestureRecognizer) {
@@ -51,6 +68,8 @@ class ViewController: UIViewController {
             print("Long Tap Gesture ended")
         }
         print(location)
+        
+        
         
         let circle = UIView(frame: CGRect(x: location.x , y: location.y , width: 10.0, height: 10.0))
         circle.layer.cornerRadius = 5
@@ -83,7 +102,7 @@ class ViewController: UIViewController {
         //Set reference of viewController in popUpVC
         popUpVC.viewController = self
         //Set Initialshot (initialDot) data point to either be accepted or rejected in popup window
-        popUpVC.inititalShot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
+        popUpVC.tempShot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
         
         //Used for later as of (3/30/17) Will create a tuple to add to an array for efficient saving of locations of shots to present on other various screens. 
         //Screens: Per Quarter, Per Half, Per Team, Per Player
@@ -97,13 +116,14 @@ class ViewController: UIViewController {
         
         //initialDot represents a shot that happend on the field.
         //initialDot is defined bellow
-        let initialDot = popUpVC.inititalShot
-        initialDot.backgroundColor = UIColor.red
-        initialDot.layer.cornerRadius = 2.5
-        initialDot.layer.borderColor = UIColor.white.cgColor
-        initialDot.layer.borderWidth = 0.25
-        initialDot.clipsToBounds = true
-        self.view.addSubview(initialDot)
+        let dot = popUpVC.tempShot
+        
+        dot.backgroundColor = UIColor.red
+        dot.layer.cornerRadius = 2.5
+        dot.layer.borderColor = UIColor.white.cgColor
+        dot.layer.borderWidth = 0.25
+        dot.clipsToBounds = true
+        self.view.addSubview(dot)
     }
 }
 

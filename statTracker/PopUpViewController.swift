@@ -8,14 +8,20 @@
 
 import UIKit
 
-class PopUpViewController: UIViewController {
+class PopUpViewController: UIViewController, UITextFieldDelegate {
 
     private var _currentShotLocationX: CGFloat!
     private var _currentShotLocationY: CGFloat!
     
     private var _viewController: ViewController!
     
-    private var _initialShot: UIView!
+    @IBOutlet weak var popUpView: UIView!
+    @IBOutlet weak var shotOnGoalSwitch: UISwitch!
+    @IBOutlet weak var goalScoredSwitch: UISwitch!
+    @IBOutlet weak var playerNumberTextField: UITextField!
+    @IBOutlet weak var manUp: UISwitch!
+    
+    private var _tempShot: UIView!
     
     var viewController: ViewController {
         get {
@@ -26,12 +32,12 @@ class PopUpViewController: UIViewController {
         }
     }
     
-    var inititalShot: UIView {
+    var tempShot: UIView {
         get {
-            return _initialShot
+            return _tempShot
         }
         set {
-            _initialShot = newValue
+            _tempShot = newValue
         }
     }
 
@@ -51,23 +57,57 @@ class PopUpViewController: UIViewController {
         set {
             _currentShotLocationY = newValue
         }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        popUpView.layer.cornerRadius = 5
 
         self.view.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         self.showAnimate()
+        
+        self.playerNumberTextField.delegate = self
+        goalScoredSwitch.setOn(false, animated: true)
+        
+        playerNumberTextField.returnKeyType = UIReturnKeyType.done
+        playerNumberTextField.becomeFirstResponder()
+        playerNumberTextField.keyboardType = .numberPad
+    }
+    
+    @IBAction func goalScoredSwitchTouched(_ sender: UISwitch) {
+        shotOnGoalSwitch.setOn(true, animated: true)
+        if goalScoredSwitch.isOn {
+            _tempShot.backgroundColor = UIColor.green
+        } else {
+            _tempShot.backgroundColor = UIColor.red
+        }
+    }
+    
+    @IBAction func shotOnGoalSwitchTouched(_ sender: UISwitch) {
+        goalScoredSwitch.setOn(false, animated: true)
+    }
+    
+    @IBAction func manUpSwitchPressed(_ sender: UISwitch) {
+        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
 
     @IBAction func closePressed(_ sender: UIButton) {
-        inititalShot.removeFromSuperview()
+        tempShot.removeFromSuperview()
         self.removeAnimate()
     }
     
     @IBAction func acceptPressed(_ sender: UIButton) {
-        viewController.shotList.append(_initialShot)
+        
+        let shot: (shotView: UIView, shotByNumber: String, scored: Bool, onGoal: Bool) = (_tempShot, playerNumberTextField.text ?? "", goalScoredSwitch.isOn, shotOnGoalSwitch.isOn)
+        
+        viewController.shotListWPlayer.append(shot)
+        viewController.shotList.append(_tempShot)
         self.removeAnimate()
         //TODO: Add shot location and player number to some list
     }
