@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--Half Field-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="statTracker" customModuleProvider="target" sceneMemberID="viewController">
@@ -143,7 +143,7 @@
                             <constraint firstItem="pCr-w6-ZYg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="15" id="v4d-13-ozC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="bpP-oH-p6o"/>
+                    <tabBarItem key="tabBarItem" title="Half Field" image="half-field-tab-bar-icon" selectedImage="half-field-tab-bar-icon" id="bpP-oH-p6o"/>
                     <connections>
                         <outlet property="halfFieldImage" destination="hYy-9h-w47" id="sl7-Qt-OFJ"/>
                     </connections>
@@ -160,9 +160,9 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1056.8" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1057" y="-327"/>
         </scene>
-        <!--View Controller-->
+        <!--Full Field-->
         <scene sceneID="xID-Xt-3he">
             <objects>
                 <viewController id="uU6-QG-ADS" sceneMemberID="viewController">
@@ -173,12 +173,78 @@
                     <view key="view" contentMode="scaleToFill" id="ZWE-c1-yBM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mX8-CC-ge1">
+                                <rect key="frame" x="147" y="297" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Full Field" image="full-field-tab-bar-icon" selectedImage="full-field-tab-bar-icon" id="fYs-h1-KJv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRZ-2d-ofO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="814"/>
+            <point key="canvasLocation" x="1057" y="354"/>
+        </scene>
+        <!--Stats-->
+        <scene sceneID="WHO-SX-nQR">
+            <objects>
+                <viewController id="2P9-3V-pT8" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oDM-dk-Eyp"/>
+                        <viewControllerLayoutGuide type="bottom" id="jpN-lP-31H"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z57-Dd-NdJ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcV-ua-Ab1">
+                                <rect key="frame" x="166" y="323" width="44" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Stats" image="stats-tab-bar-icon" selectedImage="stats-tab-bar-icon" id="1gD-lR-DcZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AXu-sp-O1d" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.5999999999999" y="1051.1244377811095"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oHA-eC-S8X">
+            <objects>
+                <viewController id="2Tp-mK-pTO" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ss6-E3-jXH"/>
+                        <viewControllerLayoutGuide type="bottom" id="7JZ-ur-nOE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H8h-DF-Zcg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Item 4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6ym-bV-LJP">
+                                <rect key="frame" x="166" y="323" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" systemItem="more" id="JzV-d1-bNs"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fa-qK-Xgo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1061.5999999999999" y="1767.1664167916044"/>
         </scene>
         <!--Pop Up View Controller-->
         <scene sceneID="Gvl-tu-6Ty">
@@ -347,7 +413,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RgF-bE-cmk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1780" y="123.68815592203899"/>
+            <point key="canvasLocation" x="1785" y="-313"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Th1-hY-E3e">
@@ -360,14 +426,20 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="8S2-yX-YLv"/>
+                        <segue destination="uU6-QG-ADS" kind="relationship" relationship="viewControllers" id="05J-8P-SAF"/>
+                        <segue destination="2P9-3V-pT8" kind="relationship" relationship="viewControllers" id="Ywz-B8-ra4"/>
+                        <segue destination="2Tp-mK-pTO" kind="relationship" relationship="viewControllers" id="fgP-HJ-abW"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z9G-ET-sTR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
+            <point key="canvasLocation" x="-36" y="1327"/>
         </scene>
     </scenes>
     <resources>
+        <image name="full-field-tab-bar-icon" width="29" height="30"/>
         <image name="half-field-diagram-green" width="600" height="554"/>
+        <image name="half-field-tab-bar-icon" width="29" height="30"/>
+        <image name="stats-tab-bar-icon" width="30" height="30"/>
     </resources>
 </document>
