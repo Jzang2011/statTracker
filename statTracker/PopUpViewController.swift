@@ -13,7 +13,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     private var _currentShotLocationX: CGFloat!
     private var _currentShotLocationY: CGFloat!
     
-    private var _viewController: ViewController!
+    private var _viewController: HalfFieldVC!
     
     @IBOutlet weak var popUpView: UIView!
     @IBOutlet weak var shotOnGoalSwitch: UISwitch!
@@ -23,7 +23,7 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
     
     private var _tempShot: UIView!
     
-    var viewController: ViewController {
+    var halfFieldVC: HalfFieldVC {
         get {
             return _viewController
         }
@@ -106,8 +106,8 @@ class PopUpViewController: UIViewController, UITextFieldDelegate {
         
         let shot: (shotView: UIView, shotByNumber: String, scored: Bool, onGoal: Bool) = (_tempShot, playerNumberTextField.text ?? "", goalScoredSwitch.isOn, shotOnGoalSwitch.isOn)
         
-        viewController.shotListWPlayer.append(shot)
-        viewController.shotList.append(_tempShot)
+        halfFieldVC.shotListWPlayer.append(shot)
+        halfFieldVC.shotList.append(_tempShot)
         self.removeAnimate()
         //TODO: Add shot location and player number to some list
     }

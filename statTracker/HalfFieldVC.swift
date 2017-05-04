@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HalfFieldVC.swift
 //  statTracker
 //
 //  Created by Jeremy Zang on 2/26/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HalfFieldVC: UIViewController {
 
     @IBOutlet weak var halfFieldImage: UIImageView!
     
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         self.addChildViewController(popUpVC)
         
         //Set reference of viewController in popUpVC
-        popUpVC.viewController = self
+        popUpVC.halfFieldVC = self
         //Set Initialshot (initialDot) data point to either be accepted or rejected in popup window
         popUpVC.tempShot = UIView(frame: CGRect(x: location.x , y: location.y , width: 5.0, height: 5.0))
         
